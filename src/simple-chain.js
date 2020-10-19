@@ -25,12 +25,15 @@ const chainMaker = {
   removeLink(position) {
     if(typeof position == 'number'){
       if(position > this.array.length -1){
+        this.array = [];
         throw new Error ("this position don't exist");
       } 
       this.array.splice(position-1, 1);
       return this;
     }
-    else throw new Error ("not a number");
+    else {
+     this.array = [];
+     throw new Error ("not a number");}
   },
   reverseChain() {
     this.array.reverse(); 
